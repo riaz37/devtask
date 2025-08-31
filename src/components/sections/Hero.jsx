@@ -1,51 +1,81 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import Button from '@/components/ui/Button';
-import ParticleSystem from '@/components/ui/ParticleSystem';
-import Image from 'next/image';
+import { motion } from "framer-motion";
+import Button from "@/components/ui/Button";
+import ParticleSystem from "@/components/ui/ParticleSystem";
+import Image from "next/image";
 
-const Hero = ({ className = '' }) => {
+const Hero = ({ className = "" }) => {
   return (
-    <section className={`min-h-screen h-[994px] relative bg-[rgba(83,56,158,1)] flex flex-col overflow-hidden ${className}`}>
+    <section
+      className={`h-full relative bg-[rgba(83,56,158,1)] flex flex-col overflow-hidden ${className}`}
+    >
       {/* Floating particles */}
       <ParticleSystem count={50} />
 
-      {/* Hero Content */}
-      <div className="flex-1 flex items-center justify-center px-8 py-16 relative z-10">
+      {/* Hero Content - Takes available space */}
+      <div className="flex-1 flex flex-col items-center justify-center px-4 sm:px-8 pt-16 sm:pt-20 relative z-10">
         <div className="max-w-4xl mx-auto w-full text-center">
+          {/* Title */}
+          <motion.p
+            className="text-base sm:text-lg lg:text-xl text-white/90 font-medium mb-3 sm:mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            Super. Simple. Banking.
+          </motion.p>
+
           {/* Main Headline */}
           <motion.h1
-            className="text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-tight mb-6"
+            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-tight mb-3 sm:mb-4"
             initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Banking technology that has your back.
-          </motion.h1>
-          
-          {/* Sub-headline */}
-          <motion.p
-            className="text-xl lg:text-2xl text-[rgb(255_255_255/0.9)] leading-relaxed max-w-3xl mx-auto mb-12"
-            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Simple, transparent banking. No hidden fees and free overdrafts.
-          </motion.p>
-          
-          {/* Call-to-Action Buttons */}
-          <motion.div
-            className="flex flex-col sm:flex-row gap-8 justify-center items-center"
+            Banking technology that has your back.
+          </motion.h1>
+
+          {/* Sub-headline */}
+          <motion.p
+            className="text-base sm:text-lg lg:text-xl text-[rgb(255_255_255/0.9)] leading-relaxed max-w-3xl mx-auto mb-6 sm:mb-8"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-                         <Button 
-               variant="white" 
-               size="lg" 
-               className="w-[143px] h-[60px] flex items-center gap-3 px-7 py-4 rounded-lg border border-[rgba(208,213,221,1)]"
-             >
+            Simple, transparent banking. No hidden fees and free overdrafts.
+          </motion.p>
+
+          {/* Call-to-Action Buttons */}
+          <motion.div
+            className="flex flex-col gap-4 sm:gap-6 justify-center items-center mb-6 sm:mb-8 w-full max-w-sm sm:max-w-none"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <Button
+              variant="white"
+              size="lg"
+              className="w-[343px] h-[48px] sm:w-[122px] sm:h-[60px] flex items-center justify-center px-7 py-4 rounded-lg border border-[rgba(127,86,217,1)] text-white whitespace-nowrap"
+              style={{ 
+                backgroundColor: "rgba(127, 86, 217, 1)",
+                borderRadius: "8px",
+                borderWidth: "1px"
+              }}
+            >
+              Sign up
+            </Button>
+            <Button
+              variant="white"
+              size="lg"
+              className="w-[343px] h-[48px] sm:w-[122px] sm:h-[60px] flex items-center justify-center px-7 py-4 rounded-lg border border-[rgba(208,213,221,1)]"
+              style={{ 
+                backgroundColor: "white", 
+                color: "rgba(52, 64, 84, 1)",
+                borderRadius: "8px",
+                borderWidth: "1px"
+              }}
+            >
               <Image
                 src="/play.svg"
                 alt="Play icon"
@@ -55,36 +85,30 @@ const Hero = ({ className = '' }) => {
               />
               Demo
             </Button>
-            <Button 
-              variant="white" 
-              size="lg" 
-              className="w-[122px] h-[60px] flex items-center justify-center px-7 py-4 rounded-lg border border-[rgba(127,86,217,1)] text-white whitespace-nowrap"
-              style={{ backgroundColor: 'rgba(127, 86, 217, 1)' }}
-            >
-              Sign up
-            </Button>
-          </motion.div>
-
-          {/* Hero Icon Section - Responsive with Figma-like properties */}
-          <motion.div
-            className="w-full max-w-[1280px] h-[456px] mx-auto px-8 flex justify-center items-center"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <Image
-              src="/hero.svg"
-              alt="Hero illustration"
-              width={1280}
-              height={456}
-              className="w-full h-full object-contain"
-              priority
-            />
           </motion.div>
         </div>
+      </div>
+
+      {/* Hero Icon Section - At the bottom */}
+      <div className="relative z-10">
+        <motion.div
+          className="w-full max-w-[1280px] mx-auto flex justify-center items-end"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <Image
+            src="/hero.svg"
+            alt="Hero illustration"
+            width={1280}
+            height={456}
+            className="w-full h-auto object-contain"
+            priority
+          />
+        </motion.div>
       </div>
     </section>
   );
 };
 
-export default Hero; 
+export default Hero;

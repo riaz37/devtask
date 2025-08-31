@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from '@/components/ui/Button';
+import Image from 'next/image';
 
 const Header = ({ className = '' }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -54,9 +55,9 @@ const Header = ({ className = '' }) => {
   };
 
   return (
-    <header className={`relative z-50 ${className}`}>
-      <nav className="bg-[rgba(83,56,158,1)] px-8 py-4">
-        <div className="max-w-6xl mx-auto flex justify-between items-center">
+    <header className={`absolute top-0 left-0 right-0 z-50 ${className}`}>
+      <nav className="bg-transparent px-8 py-4">
+        <div className="max-w-6xl mx-auto flex items-center">
           {/* Logo */}
           <motion.div 
             className="flex items-center gap-3"
@@ -64,15 +65,19 @@ const Header = ({ className = '' }) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-              <div className="w-4 h-4 bg-[rgba(83,56,158,1)] rounded-full"></div>
-            </div>
+            <Image
+              src="/logo.svg"
+              alt="Logo"
+              width={32}
+              height={32}
+              className="w-8 h-8"
+            />
             <span className="text-xl font-semibold text-white">Untitled UI</span>
           </motion.div>
 
           {/* Desktop Navigation */}
           <motion.ul 
-            className="hidden md:flex gap-8 list-none"
+            className="hidden md:flex gap-8 list-none ml-12"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -134,7 +139,7 @@ const Header = ({ className = '' }) => {
 
           {/* Desktop Auth Buttons */}
           <motion.div 
-            className="hidden md:flex gap-4 items-center"
+            className="hidden md:flex gap-4 items-center ml-auto"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -145,7 +150,7 @@ const Header = ({ className = '' }) => {
             <Button 
               variant="white" 
               size="sm"
-              className="text-white"
+              className="text-white rounded-lg"
               style={{ backgroundColor: 'rgba(127, 86, 217, 1)' }}
             >
               Sign up
@@ -154,7 +159,7 @@ const Header = ({ className = '' }) => {
 
           {/* Mobile Menu Toggle */}
           <motion.button
-            className="md:hidden text-white text-2xl bg-transparent border-none cursor-pointer"
+            className="md:hidden text-white text-2xl bg-transparent border-none cursor-pointer ml-auto"
             onClick={toggleMobileMenu}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -178,12 +183,16 @@ const Header = ({ className = '' }) => {
             <div className="p-8 h-full flex flex-col">
               {/* Mobile Menu Header */}
               <div className="flex justify-between items-center mb-12">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-                    <div className="w-4 h-4 bg-[rgba(83,56,158,1)] rounded-full"></div>
-                  </div>
-                  <span className="text-xl font-semibold text-white">Untitled UI</span>
-                </div>
+                              <div className="flex items-center gap-3">
+                <Image
+                  src="/logo.svg"
+                  alt="Logo"
+                  width={32}
+                  height={32}
+                  className="w-8 h-8"
+                />
+                <span className="text-xl font-semibold text-white">Untitled UI</span>
+              </div>
                 <button
                   className="text-white text-3xl bg-transparent border-none cursor-pointer"
                   onClick={closeMobileMenu}
@@ -258,7 +267,7 @@ const Header = ({ className = '' }) => {
                 <Button 
                   variant="white" 
                   size="lg" 
-                  className="w-full text-white"
+                  className="w-full text-white rounded-lg"
                   style={{ backgroundColor: 'rgba(127, 86, 217, 1)' }}
                 >
                   Sign up

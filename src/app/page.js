@@ -11,24 +11,19 @@ export default function Home() {
   useSmoothScroll();
 
   return (
-    <main className="min-h-screen bg-gray-900">
-      {/* Header */}
-      <Header />
-      
-      {/* Hero Section */}
-      <section id="home">
+    <main className="bg-gray-900">
+      {/* Header and Hero combined - Full page height */}
+      <section id="home" className="h-screen relative">
+        <Header />
         <Hero />
       </section>
       
-      {/* Stats Section */}
-      <Stats />
-      
-      {/* Partners Section */}
+      {/* Partners Section - Below hero */}
       <section id="products">
         <Partners />
       </section>
       
-      {/* CTA Section */}
+      {/* CTA Section - Below partners */}
       <section id="resources">
         <CTA />
       </section>
