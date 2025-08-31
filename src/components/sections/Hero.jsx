@@ -48,7 +48,7 @@ const Hero = ({ className = "" }) => {
 
           {/* Call-to-Action Buttons */}
           <motion.div
-            className="flex flex-col gap-4 sm:gap-6 justify-center items-center mb-6 sm:mb-8 w-full max-w-sm sm:max-w-none"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-6 sm:mb-8 w-full max-w-sm sm:max-w-none"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -56,25 +56,8 @@ const Hero = ({ className = "" }) => {
             <Button
               variant="white"
               size="lg"
-              className="w-[343px] h-[48px] sm:w-[122px] sm:h-[60px] flex items-center justify-center px-7 py-4 rounded-lg border border-[rgba(127,86,217,1)] text-white whitespace-nowrap"
-              style={{ 
-                backgroundColor: "rgba(127, 86, 217, 1)",
-                borderRadius: "8px",
-                borderWidth: "1px"
-              }}
-            >
-              Sign up
-            </Button>
-            <Button
-              variant="white"
-              size="lg"
-              className="w-[343px] h-[48px] sm:w-[122px] sm:h-[60px] flex items-center justify-center px-7 py-4 rounded-lg border border-[rgba(208,213,221,1)]"
-              style={{ 
-                backgroundColor: "white", 
-                color: "rgba(52, 64, 84, 1)",
-                borderRadius: "8px",
-                borderWidth: "1px"
-              }}
+              className="w-[343px] h-[48px] sm:w-[122px] sm:h-[60px] flex items-center justify-center gap-3 px-7 py-4 rounded-lg border border-[rgba(208,213,221,1)]"
+              style={{ backgroundColor: "white", color: "rgba(52, 64, 84, 1)" }}
             >
               <Image
                 src="/play.svg"
@@ -84,6 +67,14 @@ const Hero = ({ className = "" }) => {
                 className="w-5 h-5"
               />
               Demo
+            </Button>
+            <Button
+              variant="white"
+              size="lg"
+              className="w-[343px] h-[48px] sm:w-[122px] sm:h-[60px] flex items-center justify-center px-7 py-4 rounded-lg border border-[rgba(127,86,217,1)] text-white whitespace-nowrap"
+              style={{ backgroundColor: "rgba(127, 86, 217, 1)" }}
+            >
+              Sign up
             </Button>
           </motion.div>
         </div>

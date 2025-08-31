@@ -40,7 +40,7 @@ const CTA = ({ className = '' }) => {
               </motion.p>
               
               <motion.div
-                className="flex flex-row gap-4 items-center w-full justify-center"
+                className="flex flex-col sm:flex-row gap-4 items-center w-full justify-center"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -49,7 +49,7 @@ const CTA = ({ className = '' }) => {
                 <Button 
                   variant="white" 
                   size="lg" 
-                  className="flex items-center justify-center gap-2 rounded-lg border border-[rgba(127,86,217,1)] whitespace-nowrap text-sm lg:text-base px-6 py-3"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-lg border border-[rgba(127,86,217,1)] whitespace-nowrap text-sm lg:text-base px-6 py-3"
                   style={{ 
                     backgroundColor: "white",
                     color: "rgba(52, 64, 84, 1)",
@@ -61,7 +61,7 @@ const CTA = ({ className = '' }) => {
                 </Button>
                 <Button 
                   size="lg" 
-                  className="flex items-center justify-center gap-2 rounded-lg border border-[rgba(127,86,217,1)] text-white whitespace-nowrap text-sm lg:text-base px-6 py-3"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-lg border border-[rgba(127,86,217,1)] text-white whitespace-nowrap text-sm lg:text-base px-6 py-3"
                   style={{ 
                     backgroundColor: "rgba(127, 86, 217, 1)",
                     borderRadius: "8px",

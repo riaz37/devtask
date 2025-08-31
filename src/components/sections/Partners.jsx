@@ -43,7 +43,7 @@ const Partners = ({ className = '' }) => {
         </motion.p>
         
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16 max-w-6xl mx-auto"
+          className="grid grid-cols-2 sm:flex sm:items-center sm:justify-center gap-4 sm:gap-16 lg:gap-20 max-w-6xl mx-auto place-items-center"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -52,7 +52,7 @@ const Partners = ({ className = '' }) => {
           {partners.map((partner, index) => (
             <motion.div
               key={partner.name}
-              className="flex items-center justify-center gap-2 sm:gap-3 lg:gap-4 transition-all duration-300 cursor-pointer hover:scale-105"
+              className="flex items-center gap-2 sm:gap-3 transition-all duration-300 cursor-pointer hover:scale-105"
               variants={itemVariants}
             >
               <Image
@@ -60,10 +60,10 @@ const Partners = ({ className = '' }) => {
                 alt={`${partner.name} logo`}
                 width={48}
                 height={48}
-                className="w-12 h-12"
+                className="w-8 h-8 sm:w-12 sm:h-12"
               />
               <span 
-                className="text-3xl font-bold"
+                className="text-sm sm:text-3xl font-bold"
                 style={{ color: 'rgba(16, 24, 40, 1)' }}
               >
                 {partner.name}
