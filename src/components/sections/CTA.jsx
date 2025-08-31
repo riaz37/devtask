@@ -7,9 +7,9 @@ import Image from 'next/image';
 const CTA = ({ className = '' }) => {
   return (
     <section className={`bg-white py-16 ${className}`}>
-      <div className="max-w-6xl mx-auto px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 flex justify-center sm:block">
         <motion.div
-          className="rounded-3xl overflow-hidden relative"
+          className="rounded-3xl overflow-hidden relative w-[343px] h-[338px] sm:w-auto sm:h-auto"
           style={{ backgroundColor: 'rgba(83, 56, 158, 1)' }}
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
