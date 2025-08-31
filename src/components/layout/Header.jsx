@@ -58,7 +58,6 @@ const Header = ({ className = '' }) => {
     <header className={`absolute top-0 left-0 right-0 z-50 ${className}`}>
       <nav className="bg-transparent px-8 py-4">
         <div className="max-w-6xl mx-auto flex items-center">
-          {/* Logo */}
           <motion.div 
             className="flex items-center gap-3"
             initial={{ opacity: 0, x: -20 }}
@@ -75,7 +74,6 @@ const Header = ({ className = '' }) => {
             <span className="text-xl font-semibold text-white">Untitled UI</span>
           </motion.div>
 
-          {/* Desktop Navigation */}
           <motion.ul 
             className="hidden md:flex gap-8 list-none ml-12"
             initial={{ opacity: 0, y: -20 }}
@@ -137,7 +135,6 @@ const Header = ({ className = '' }) => {
             ))}
           </motion.ul>
 
-          {/* Desktop Auth Buttons */}
           <motion.div 
             className="hidden md:flex gap-4 items-center ml-auto"
             initial={{ opacity: 0, x: 20 }}
@@ -157,7 +154,6 @@ const Header = ({ className = '' }) => {
             </Button>
           </motion.div>
 
-          {/* Mobile Menu Toggle */}
           <motion.button
             className="md:hidden text-white text-2xl bg-transparent border-none cursor-pointer ml-auto"
             onClick={toggleMobileMenu}
@@ -170,7 +166,6 @@ const Header = ({ className = '' }) => {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -181,7 +176,6 @@ const Header = ({ className = '' }) => {
             transition={{ duration: 0.3 }}
           >
             <div className="p-8 h-full flex flex-col">
-              {/* Mobile Menu Header */}
               <div className="flex justify-between items-center mb-12">
                               <div className="flex items-center gap-3">
                 <Image
@@ -201,7 +195,6 @@ const Header = ({ className = '' }) => {
                 </button>
               </div>
 
-              {/* Mobile Navigation Links */}
               <ul className="list-none mb-12 space-y-6">
                 {navLinks.map((link) => (
                   <li key={link.href}>
@@ -259,7 +252,6 @@ const Header = ({ className = '' }) => {
                 ))}
               </ul>
 
-              {/* Mobile Auth Buttons */}
               <div className="flex flex-col gap-4 mt-auto">
                 <a href="#" className="text-white text-lg font-medium no-underline text-center py-3 border border-white/20 rounded-lg hover:bg-white/10 transition-colors duration-200">
                   Log in

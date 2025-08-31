@@ -17,7 +17,6 @@ const CTA = ({ className = '' }) => {
           transition={{ duration: 0.8 }}
         >
           <div className="grid lg:grid-cols-2 items-center min-h-[400px]">
-            {/* Left Content */}
             <div className="p-8 lg:p-12 flex flex-col items-center text-center">
               <motion.h2
                 className="text-3xl lg:text-4xl xl:text-5xl font-black text-white mb-4 lg:mb-6 leading-tight"
@@ -73,7 +72,6 @@ const CTA = ({ className = '' }) => {
               </motion.div>
             </div>
 
-            {/* Right Content - Image */}
             <div className="h-full overflow-hidden flex items-center justify-center">
               <Image
                 src="/ctaicon.svg"

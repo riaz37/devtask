@@ -48,10 +48,8 @@ const CreditCard = ({
         ease: "easeOut"
       }}
     >
-      {/* Shimmer effect overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[rgb(255_255_255/0.1)] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
       
-      {/* Card content */}
       <div className="relative z-10 h-full flex flex-col justify-between">
         <div className="flex-1" />
         <div className="space-y-2">

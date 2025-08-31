@@ -10,13 +10,10 @@ const Hero = ({ className = "" }) => {
     <section
       className={`h-full relative bg-[rgba(83,56,158,1)] flex flex-col overflow-hidden ${className}`}
     >
-      {/* Floating particles */}
       <ParticleSystem count={50} />
 
-      {/* Hero Content - Takes available space */}
       <div className="flex-1 flex flex-col items-center justify-center px-4 sm:px-8 pt-16 sm:pt-20 relative z-10">
         <div className="max-w-4xl mx-auto w-full text-center">
-          {/* Title */}
           <motion.p
             className="text-base sm:text-lg lg:text-xl text-white/90 font-medium mb-3 sm:mb-4"
             initial={{ opacity: 0, y: 30 }}
@@ -26,7 +23,6 @@ const Hero = ({ className = "" }) => {
             Super. Simple. Banking.
           </motion.p>
 
-          {/* Main Headline */}
           <motion.h1
             className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-tight mb-3 sm:mb-4"
             initial={{ opacity: 0, y: 50 }}
@@ -36,7 +32,6 @@ const Hero = ({ className = "" }) => {
             Banking technology that has your back.
           </motion.h1>
 
-          {/* Sub-headline */}
           <motion.p
             className="text-base sm:text-lg lg:text-xl text-[rgb(255_255_255/0.9)] leading-relaxed max-w-3xl mx-auto mb-6 sm:mb-8"
             initial={{ opacity: 0, y: 30 }}
@@ -46,7 +41,6 @@ const Hero = ({ className = "" }) => {
             Simple, transparent banking. No hidden fees and free overdrafts.
           </motion.p>
 
-          {/* Call-to-Action Buttons */}
           <motion.div
             className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-6 sm:mb-8 w-full max-w-sm sm:max-w-none"
             initial={{ opacity: 0, y: 30 }}
@@ -80,7 +74,6 @@ const Hero = ({ className = "" }) => {
         </div>
       </div>
 
-      {/* Hero Icon Section - At the bottom */}
       <div className="relative z-10">
         <motion.div
           className="w-full max-w-[1280px] mx-auto flex justify-center items-end"
